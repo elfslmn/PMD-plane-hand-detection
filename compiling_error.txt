@@ -1,0 +1,16 @@
+/home/user/Desktop/opencv_projects/plane_detection/PMDDetector: In function `_start':
+(.text+0x0): multiple definition of `_start'
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o:(.text+0x0): first defined here
+/home/user/Desktop/opencv_projects/plane_detection/PMDDetector: In function `_fini':
+(.fini+0x0): multiple definition of `_fini'
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o:(.fini+0x0): first defined here
+/home/user/Desktop/opencv_projects/plane_detection/PMDDetector:(.rodata+0x0): multiple definition of `_IO_stdin_used'
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o:(.rodata.cst4+0x0): first defined here
+/home/user/Desktop/opencv_projects/plane_detection/PMDDetector: In function `data_start':
+(.data+0x0): multiple definition of `__data_start'
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o:(.data+0x0): first defined here
+/home/user/Desktop/opencv_projects/plane_detection/PMDDetector: In function `_init':
+(.init+0x0): multiple definition of `_init'
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o:(.init+0x0): first defined here
+/usr/bin/ld: error in /home/user/Desktop/opencv_projects/plane_detection/PMDDetector(.eh_frame); no .eh_frame_hdr table will be created.
+collect2: error: ld returned 1 exit status
