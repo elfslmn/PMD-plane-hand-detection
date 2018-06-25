@@ -18,6 +18,7 @@
 #include "PlaneDetector.h"
 #include "Util.h"
 #include "HandDetector.h"
+#include "Visualizer.h"
 
 using namespace royale;
 using namespace std;
@@ -93,8 +94,21 @@ public :
             }
         }
         planeDetector->update(xyz_map);
+        planes = planeDetector -> getPlanes();
         handDetector->update(xyz_map);
         hands = handDetector->getHands();
+
+        grayImage8.create (Size (data->width, data->height), CV_8UC1);
+        normalize (grayImage, grayImage8, 0, 255, NORM_MINMAX, CV_8UC1);
+        cv::cvtColor(grayImage8, handVisual, cv::COLOR_GRAY2BGR, 3);
+
+        for (Hand::Ptr hand : hands) {
+            double dispVal = hand->getSVMConfidence();
+            Visualizer::visualizeHand(handVisual, handVisual, hand.get(),dispVal, &planes);
+         }
+         cv::resize(handVisual, handVisual, handVisual.size()*3,0, 0, cv::INTER_NEAREST);
+         cv::imshow("Hands", handVisual);
+
         //cout <<"Hand found: "<<hands.size() << endl;
         //planeDetector->detectRansac(xyz_map);
 
@@ -189,6 +203,9 @@ private:
     PlaneDetector::Ptr planeDetector;
     HandDetector::Ptr handDetector;
     std::vector<Hand::Ptr> hands;
+    std::vector<FramePlane::Ptr> planes;
+    cv::Mat handVisual;
+
    //Minimum depth of points (in meters). Points under this depth are presumed to be noise. (0.0 to disable)
    const float NOISE_FILTER_LOW = 0.14f;
    //Maximum depth of points (in meters). Points above this depth are presumed to be noise. (0.0 to disable)
@@ -315,11 +332,12 @@ int main (int argc, char *argv[])
     // create two windows
     //namedWindow ("Depth", WINDOW_AUTOSIZE);
     //namedWindow ("Gray", WINDOW_AUTOSIZE);
-    namedWindow ("FloodFill", WINDOW_AUTOSIZE);
+    //namedWindow ("FloodFill", WINDOW_AUTOSIZE);
     namedWindow ("NormalMap", WINDOW_AUTOSIZE);
-    namedWindow ("[Plane Debug]", WINDOW_AUTOSIZE);
+    //namedWindow ("[Plane Debug]", WINDOW_AUTOSIZE);
     //namedWindow ("Inliers", WINDOW_AUTOSIZE);
     namedWindow ("[Hand Flood Fill Debug]", WINDOW_AUTOSIZE);
+    namedWindow ("Hands", WINDOW_AUTOSIZE);
 
     //start capture mode
     if (cameraDevice->startCapture() != CameraStatus::SUCCESS)

@@ -339,6 +339,33 @@ src/Util.cpp.s:
 	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Util.cpp.s
 .PHONY : src/Util.cpp.s
 
+src/Visualizer.o: src/Visualizer.cpp.o
+
+.PHONY : src/Visualizer.o
+
+# target to build an object file
+src/Visualizer.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Visualizer.cpp.o
+.PHONY : src/Visualizer.cpp.o
+
+src/Visualizer.i: src/Visualizer.cpp.i
+
+.PHONY : src/Visualizer.i
+
+# target to preprocess a source file
+src/Visualizer.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Visualizer.cpp.i
+.PHONY : src/Visualizer.cpp.i
+
+src/Visualizer.s: src/Visualizer.cpp.s
+
+.PHONY : src/Visualizer.s
+
+# target to generate assembly for a file
+src/Visualizer.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Visualizer.cpp.s
+.PHONY : src/Visualizer.cpp.s
+
 src/mainPMD.o: src/mainPMD.cpp.o
 
 .PHONY : src/mainPMD.o
@@ -399,6 +426,9 @@ help:
 	@echo "... src/Util.o"
 	@echo "... src/Util.i"
 	@echo "... src/Util.s"
+	@echo "... src/Visualizer.o"
+	@echo "... src/Visualizer.i"
+	@echo "... src/Visualizer.s"
 	@echo "... src/mainPMD.o"
 	@echo "... src/mainPMD.i"
 	@echo "... src/mainPMD.s"

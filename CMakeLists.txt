@@ -51,6 +51,7 @@ add_executable(PMDDetector
   ${SRC_DIR}/Hand.cpp
   ${SRC_DIR}/HandClassifier.cpp
   ${SRC_DIR}/HandDetector.cpp
+  ${SRC_DIR}/Visualizer.cpp
    )
    
 COPY_ROYALE_LIBS(PMDDetector)
