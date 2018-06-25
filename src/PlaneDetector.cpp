@@ -2,7 +2,7 @@
 #include "PlaneDetector.h"
 #include "Util.h"
 
-#define DEBUG 1;
+//#define DEBUG 0;
 
 using namespace cv;
 
@@ -46,15 +46,20 @@ namespace ark {
 
         //util::computeNormalMap(image, normalMap, 4, params->normalResolution, false);
         util::computeNormalMap(image, normalMap, params->normalCalculationDistance, params->normalResolution, false);
+
         Mat normalMap8;
         normalize (normalMap, normalMap8, 0, 255, NORM_MINMAX, CV_8UC3);
         cv::resize(normalMap8, normalMap8, normalMap8.size()*3,0, 0, cv::INTER_NEAREST);
         imshow("NormalMap", normalMap8);
         detectPlaneHelper(image, normalMap, equations, points, pointsXYZ, params);
 
+        #ifdef DEBUG
         if(equations.size() != 0) std::cout << "PLANE DETECTED !! : " << equations.size() << std::endl;
+        #endif
         for (uint i = 0; i < equations.size(); ++i) {
+           #ifdef DEBUG
            std::cout << equations[i]<< std::endl;
+           #endif
             FramePlane::Ptr planePtr = std::make_shared<FramePlane>
                 (equations[i], points[i], pointsXYZ[i], image, params);
 

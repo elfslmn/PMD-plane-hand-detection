@@ -26,6 +26,10 @@
 #include <mutex>
 
 // Boost
+#include <boost/filesystem.hpp>
+//#include <boost/function.hpp>
+// #include <boost/smart_ptr.hpp>
+// #include <boost/bind.hpp>
 
 #include <boost/polygon/voronoi.hpp>
 #include <boost/polygon/point_data.hpp>

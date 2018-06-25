@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/Desktop/opencv_projects/plane_detection
+CMAKE_SOURCE_DIR = /home/user/Desktop/opencv_projects/PMD_detector
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/Desktop/opencv_projects/plane_detection
+CMAKE_BINARY_DIR = /home/user/Desktop/opencv_projects/PMD_detector
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Desktop/opencv_projects/plane_detection/CMakeFiles /home/user/Desktop/opencv_projects/plane_detection/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Desktop/opencv_projects/PMD_detector/CMakeFiles /home/user/Desktop/opencv_projects/PMD_detector/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Desktop/opencv_projects/plane_detection/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Desktop/opencv_projects/PMD_detector/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -204,6 +204,87 @@ src/FramePlane.cpp.s:
 	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/FramePlane.cpp.s
 .PHONY : src/FramePlane.cpp.s
 
+src/Hand.o: src/Hand.cpp.o
+
+.PHONY : src/Hand.o
+
+# target to build an object file
+src/Hand.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Hand.cpp.o
+.PHONY : src/Hand.cpp.o
+
+src/Hand.i: src/Hand.cpp.i
+
+.PHONY : src/Hand.i
+
+# target to preprocess a source file
+src/Hand.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Hand.cpp.i
+.PHONY : src/Hand.cpp.i
+
+src/Hand.s: src/Hand.cpp.s
+
+.PHONY : src/Hand.s
+
+# target to generate assembly for a file
+src/Hand.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Hand.cpp.s
+.PHONY : src/Hand.cpp.s
+
+src/HandClassifier.o: src/HandClassifier.cpp.o
+
+.PHONY : src/HandClassifier.o
+
+# target to build an object file
+src/HandClassifier.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/HandClassifier.cpp.o
+.PHONY : src/HandClassifier.cpp.o
+
+src/HandClassifier.i: src/HandClassifier.cpp.i
+
+.PHONY : src/HandClassifier.i
+
+# target to preprocess a source file
+src/HandClassifier.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/HandClassifier.cpp.i
+.PHONY : src/HandClassifier.cpp.i
+
+src/HandClassifier.s: src/HandClassifier.cpp.s
+
+.PHONY : src/HandClassifier.s
+
+# target to generate assembly for a file
+src/HandClassifier.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/HandClassifier.cpp.s
+.PHONY : src/HandClassifier.cpp.s
+
+src/HandDetector.o: src/HandDetector.cpp.o
+
+.PHONY : src/HandDetector.o
+
+# target to build an object file
+src/HandDetector.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/HandDetector.cpp.o
+.PHONY : src/HandDetector.cpp.o
+
+src/HandDetector.i: src/HandDetector.cpp.i
+
+.PHONY : src/HandDetector.i
+
+# target to preprocess a source file
+src/HandDetector.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/HandDetector.cpp.i
+.PHONY : src/HandDetector.cpp.i
+
+src/HandDetector.s: src/HandDetector.cpp.s
+
+.PHONY : src/HandDetector.s
+
+# target to generate assembly for a file
+src/HandDetector.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/HandDetector.cpp.s
+.PHONY : src/HandDetector.cpp.s
+
 src/PlaneDetector.o: src/PlaneDetector.cpp.o
 
 .PHONY : src/PlaneDetector.o
@@ -303,6 +384,15 @@ help:
 	@echo "... src/FramePlane.o"
 	@echo "... src/FramePlane.i"
 	@echo "... src/FramePlane.s"
+	@echo "... src/Hand.o"
+	@echo "... src/Hand.i"
+	@echo "... src/Hand.s"
+	@echo "... src/HandClassifier.o"
+	@echo "... src/HandClassifier.i"
+	@echo "... src/HandClassifier.s"
+	@echo "... src/HandDetector.o"
+	@echo "... src/HandDetector.i"
+	@echo "... src/HandDetector.s"
 	@echo "... src/PlaneDetector.o"
 	@echo "... src/PlaneDetector.i"
 	@echo "... src/PlaneDetector.s"

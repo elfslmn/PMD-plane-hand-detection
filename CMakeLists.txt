@@ -19,8 +19,11 @@ else()
     message( STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler." )
 endif()
 
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w" ) # to surpress warnings
+
 set( Boost_USE_STATIC_LIBS ON )
 set( Boost_USE_STATIC ON )
+find_package(Boost 1.58.0 COMPONENTS filesystem REQUIRED)
 
 # This needs at least OpenCV 2.x, but it should also work with OpenCV 3.x
 find_package( OpenCV REQUIRED )
@@ -35,6 +38,7 @@ link_directories(${royale_LIB_DIR})
 include_directories(
   ${INCLUDE_DIR}
   ${OpenCV_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 add_executable(PMDDetector
@@ -44,7 +48,10 @@ add_executable(PMDDetector
   ${SRC_DIR}/Util.cpp
   ${SRC_DIR}/FrameObject.cpp
   ${SRC_DIR}/FramePlane.cpp
+  ${SRC_DIR}/Hand.cpp
+  ${SRC_DIR}/HandClassifier.cpp
+  ${SRC_DIR}/HandDetector.cpp
    )
    
 COPY_ROYALE_LIBS(PMDDetector)
-target_link_libraries(PMDDetector "${royale_LIBS}" "${OpenCV_LIBRARIES}")
+target_link_libraries(PMDDetector "${royale_LIBS}" "${OpenCV_LIBRARIES}" "${Boost_LIBRARIES}")

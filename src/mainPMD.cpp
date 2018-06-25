@@ -17,6 +17,7 @@
 #include "stdafx.h"
 #include "PlaneDetector.h"
 #include "Util.h"
+#include "HandDetector.h"
 
 using namespace royale;
 using namespace std;
@@ -92,6 +93,9 @@ public :
             }
         }
         planeDetector->update(xyz_map);
+        handDetector->update(xyz_map);
+        hands = handDetector->getHands();
+        //cout <<"Hand found: "<<hands.size() << endl;
         //planeDetector->detectRansac(xyz_map);
 
         // vector<Mat> channels(3);
@@ -153,6 +157,10 @@ public :
     {
       planeDetector = detector;
     }
+    void setHandDetector(HandDetector::Ptr detector)
+    {
+      handDetector = detector;
+    }
 
     bool saveFrame(std::string destination)
     {
@@ -179,6 +187,8 @@ private:
     Mat distortionCoefficients;
 
     PlaneDetector::Ptr planeDetector;
+    HandDetector::Ptr handDetector;
+    std::vector<Hand::Ptr> hands;
    //Minimum depth of points (in meters). Points under this depth are presumed to be noise. (0.0 to disable)
    const float NOISE_FILTER_LOW = 0.14f;
    //Maximum depth of points (in meters). Points above this depth are presumed to be noise. (0.0 to disable)
@@ -206,7 +216,8 @@ int main (int argc, char *argv[])
    DetectionParams::Ptr params = DetectionParams::create(); // default parameters
    // initialize detectors
    PlaneDetector::Ptr planeDetector = std::make_shared<PlaneDetector>();
-
+   HandDetector::Ptr handDetector = std::make_shared<HandDetector>(planeDetector);
+   handDetector->setParams(params);
 
     // This is the data listener which will receive callbacks.  It's declared
     // before the cameraDevice so that, if this function exits with a 'return'
@@ -275,6 +286,7 @@ int main (int argc, char *argv[])
 
     listener.setLensParameters (lensParameters);
     listener.setPlaneDetector(planeDetector);
+    listener.setHandDetector(handDetector);
 
     // register a data listener
     if (cameraDevice->registerDataListener (&listener) != CameraStatus::SUCCESS)
@@ -307,6 +319,7 @@ int main (int argc, char *argv[])
     namedWindow ("NormalMap", WINDOW_AUTOSIZE);
     namedWindow ("[Plane Debug]", WINDOW_AUTOSIZE);
     //namedWindow ("Inliers", WINDOW_AUTOSIZE);
+    namedWindow ("[Hand Flood Fill Debug]", WINDOW_AUTOSIZE);
 
     //start capture mode
     if (cameraDevice->startCapture() != CameraStatus::SUCCESS)
