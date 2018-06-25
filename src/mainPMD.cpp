@@ -300,23 +300,6 @@ int main (int argc, char *argv[])
       printf ("Failed to set exposure mode, CODE %d\n", (int) status);
    }
 
-   // //get exposure limits
-   // status = cameraDevice->getExposureLimits(exposureLimits);
-   // if (status != CameraStatus::SUCCESS)
-   // {
-   //    printf ("Failed to get exposure limits, CODE %d", (int) status);
-   // }
-   // else{
-   //    printf("Exposure Limits:  min=%d  max=%d\n", exposureLimits.first, exposureLimits.second);
-   // }
-   //
-   // //set exposure time to minimum
-   // status = cameraDevice->setExposureTime(500);
-   // if (status != CameraStatus::SUCCESS)
-   // {
-   //    printf ("Failed to set exposure time, CODE %d", (int) status);
-   // }
-
     // create two windows
     //namedWindow ("Depth", WINDOW_AUTOSIZE);
     //namedWindow ("Gray", WINDOW_AUTOSIZE);

@@ -2,6 +2,8 @@
 #include "PlaneDetector.h"
 #include "Util.h"
 
+#define DEBUG 1;
+
 using namespace cv;
 
 namespace ark {
@@ -62,7 +64,7 @@ namespace ark {
         }
 
         // done detecting planes, show visualization if debug flag is on
-//#ifdef DEBUG
+#ifdef DEBUG
         cv::Mat planeDebugVisual =
             cv::Mat::zeros(image.size() / params->normalResolution, CV_8UC3);
 
@@ -84,7 +86,7 @@ namespace ark {
         }
 
         cv::imshow("[Plane Debug]", planeDebugVisual);
-//#endif
+#endif
     }
 
     void PlaneDetector::detectPlaneHelper(const cv::Mat & xyz_map, const cv::Mat & normal_map,
@@ -92,7 +94,7 @@ namespace ark {
         std::vector<VecP2iPtr> & output_points, std::vector<VecV3fPtr> & output_points_xyz,
         DetectionParams::Ptr params)
     {
-      //TODO for debug
+      #ifdef DEBUG
       std::vector<cv::Mat> channels(3);
       cv::split(xyz_map, channels);
       channels[0] = channels[2].clone();
@@ -100,6 +102,7 @@ namespace ark {
       cv::Mat filldebug;
       cv::merge(channels,filldebug);
       normalize (filldebug, filldebug, 0, 255, NORM_MINMAX, CV_8UC3);
+      #endif
 
         // 1. initialize
         const int R = xyz_map.rows, C = xyz_map.cols, N = R * C;
@@ -164,8 +167,10 @@ namespace ark {
                     //printf("\ncolor = %d\n",q);
                     for (int k = 0; k < numPts; ++k) {
                         allXyzPoints[k] = xyz_map.at<Vec3f>(allIndices[k]);
-                        //printf("(%d,%d)",allIndices[k].x, allIndices[k].y);
+
+                        #ifdef DEBUG
                         filldebug.at<Vec3b>(allIndices[k]) = color;
+                        #endif
                     }
 
                     // find surface area
@@ -248,8 +253,11 @@ namespace ark {
             output_points_xyz.push_back(planePointsXYZ[i]);
             output_equations.push_back(planeEquation[i]);
         }
-        cv::resize(filldebug, filldebug, filldebug.size()*3,0, 0, cv::INTER_NEAREST);
-         cv::imshow("FloodFill",filldebug);
+
+      #ifdef DEBUG
+      cv::resize(filldebug, filldebug, filldebug.size()*3,0, 0, cv::INTER_NEAREST);
+      cv::imshow("FloodFill",filldebug);
+      #endif
     }
 
     const std::vector<FramePlane::Ptr> & PlaneDetector::getPlanes() const {

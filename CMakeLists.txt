@@ -5,6 +5,7 @@ project (PMDDetector)
 set(CMAKE_MODULE_PATH "/opt/opencv331/opencv")
 set(ROYALE_DIR "/home/user/libroyale-3.11.0.42-LINUX-x86-64Bit")
 set(INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include" )
+set(SRC_DIR "${PROJECT_SOURCE_DIR}/src" )
 
 include( CheckCXXCompilerFlag )
 CHECK_CXX_COMPILER_FLAG( "-std=c++11" COMPILER_SUPPORTS_CXX11 )
@@ -37,12 +38,12 @@ include_directories(
 )
 
 add_executable(PMDDetector
-  mainPMD.cpp
-  Detector.cpp
-  PlaneDetector.cpp
-  Util.cpp
-  FrameObject.cpp
-  FramePlane.cpp
+  ${SRC_DIR}/mainPMD.cpp
+  ${SRC_DIR}/Detector.cpp
+  ${SRC_DIR}/PlaneDetector.cpp
+  ${SRC_DIR}/Util.cpp
+  ${SRC_DIR}/FrameObject.cpp
+  ${SRC_DIR}/FramePlane.cpp
    )
    
 COPY_ROYALE_LIBS(PMDDetector)

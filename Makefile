@@ -123,167 +123,167 @@ PMDDetector/fast:
 	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/build
 .PHONY : PMDDetector/fast
 
-Detector.o: Detector.cpp.o
+src/Detector.o: src/Detector.cpp.o
 
-.PHONY : Detector.o
-
-# target to build an object file
-Detector.cpp.o:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/Detector.cpp.o
-.PHONY : Detector.cpp.o
-
-Detector.i: Detector.cpp.i
-
-.PHONY : Detector.i
-
-# target to preprocess a source file
-Detector.cpp.i:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/Detector.cpp.i
-.PHONY : Detector.cpp.i
-
-Detector.s: Detector.cpp.s
-
-.PHONY : Detector.s
-
-# target to generate assembly for a file
-Detector.cpp.s:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/Detector.cpp.s
-.PHONY : Detector.cpp.s
-
-FrameObject.o: FrameObject.cpp.o
-
-.PHONY : FrameObject.o
+.PHONY : src/Detector.o
 
 # target to build an object file
-FrameObject.cpp.o:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/FrameObject.cpp.o
-.PHONY : FrameObject.cpp.o
+src/Detector.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Detector.cpp.o
+.PHONY : src/Detector.cpp.o
 
-FrameObject.i: FrameObject.cpp.i
+src/Detector.i: src/Detector.cpp.i
 
-.PHONY : FrameObject.i
+.PHONY : src/Detector.i
 
 # target to preprocess a source file
-FrameObject.cpp.i:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/FrameObject.cpp.i
-.PHONY : FrameObject.cpp.i
+src/Detector.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Detector.cpp.i
+.PHONY : src/Detector.cpp.i
 
-FrameObject.s: FrameObject.cpp.s
+src/Detector.s: src/Detector.cpp.s
 
-.PHONY : FrameObject.s
+.PHONY : src/Detector.s
 
 # target to generate assembly for a file
-FrameObject.cpp.s:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/FrameObject.cpp.s
-.PHONY : FrameObject.cpp.s
+src/Detector.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Detector.cpp.s
+.PHONY : src/Detector.cpp.s
 
-FramePlane.o: FramePlane.cpp.o
+src/FrameObject.o: src/FrameObject.cpp.o
 
-.PHONY : FramePlane.o
+.PHONY : src/FrameObject.o
 
 # target to build an object file
-FramePlane.cpp.o:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/FramePlane.cpp.o
-.PHONY : FramePlane.cpp.o
+src/FrameObject.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/FrameObject.cpp.o
+.PHONY : src/FrameObject.cpp.o
 
-FramePlane.i: FramePlane.cpp.i
+src/FrameObject.i: src/FrameObject.cpp.i
 
-.PHONY : FramePlane.i
+.PHONY : src/FrameObject.i
 
 # target to preprocess a source file
-FramePlane.cpp.i:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/FramePlane.cpp.i
-.PHONY : FramePlane.cpp.i
+src/FrameObject.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/FrameObject.cpp.i
+.PHONY : src/FrameObject.cpp.i
 
-FramePlane.s: FramePlane.cpp.s
+src/FrameObject.s: src/FrameObject.cpp.s
 
-.PHONY : FramePlane.s
+.PHONY : src/FrameObject.s
 
 # target to generate assembly for a file
-FramePlane.cpp.s:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/FramePlane.cpp.s
-.PHONY : FramePlane.cpp.s
+src/FrameObject.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/FrameObject.cpp.s
+.PHONY : src/FrameObject.cpp.s
 
-PlaneDetector.o: PlaneDetector.cpp.o
+src/FramePlane.o: src/FramePlane.cpp.o
 
-.PHONY : PlaneDetector.o
+.PHONY : src/FramePlane.o
 
 # target to build an object file
-PlaneDetector.cpp.o:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/PlaneDetector.cpp.o
-.PHONY : PlaneDetector.cpp.o
+src/FramePlane.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/FramePlane.cpp.o
+.PHONY : src/FramePlane.cpp.o
 
-PlaneDetector.i: PlaneDetector.cpp.i
+src/FramePlane.i: src/FramePlane.cpp.i
 
-.PHONY : PlaneDetector.i
+.PHONY : src/FramePlane.i
 
 # target to preprocess a source file
-PlaneDetector.cpp.i:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/PlaneDetector.cpp.i
-.PHONY : PlaneDetector.cpp.i
+src/FramePlane.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/FramePlane.cpp.i
+.PHONY : src/FramePlane.cpp.i
 
-PlaneDetector.s: PlaneDetector.cpp.s
+src/FramePlane.s: src/FramePlane.cpp.s
 
-.PHONY : PlaneDetector.s
+.PHONY : src/FramePlane.s
 
 # target to generate assembly for a file
-PlaneDetector.cpp.s:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/PlaneDetector.cpp.s
-.PHONY : PlaneDetector.cpp.s
+src/FramePlane.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/FramePlane.cpp.s
+.PHONY : src/FramePlane.cpp.s
 
-Util.o: Util.cpp.o
+src/PlaneDetector.o: src/PlaneDetector.cpp.o
 
-.PHONY : Util.o
+.PHONY : src/PlaneDetector.o
 
 # target to build an object file
-Util.cpp.o:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/Util.cpp.o
-.PHONY : Util.cpp.o
+src/PlaneDetector.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/PlaneDetector.cpp.o
+.PHONY : src/PlaneDetector.cpp.o
 
-Util.i: Util.cpp.i
+src/PlaneDetector.i: src/PlaneDetector.cpp.i
 
-.PHONY : Util.i
+.PHONY : src/PlaneDetector.i
 
 # target to preprocess a source file
-Util.cpp.i:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/Util.cpp.i
-.PHONY : Util.cpp.i
+src/PlaneDetector.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/PlaneDetector.cpp.i
+.PHONY : src/PlaneDetector.cpp.i
 
-Util.s: Util.cpp.s
+src/PlaneDetector.s: src/PlaneDetector.cpp.s
 
-.PHONY : Util.s
+.PHONY : src/PlaneDetector.s
 
 # target to generate assembly for a file
-Util.cpp.s:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/Util.cpp.s
-.PHONY : Util.cpp.s
+src/PlaneDetector.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/PlaneDetector.cpp.s
+.PHONY : src/PlaneDetector.cpp.s
 
-mainPMD.o: mainPMD.cpp.o
+src/Util.o: src/Util.cpp.o
 
-.PHONY : mainPMD.o
+.PHONY : src/Util.o
 
 # target to build an object file
-mainPMD.cpp.o:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/mainPMD.cpp.o
-.PHONY : mainPMD.cpp.o
+src/Util.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Util.cpp.o
+.PHONY : src/Util.cpp.o
 
-mainPMD.i: mainPMD.cpp.i
+src/Util.i: src/Util.cpp.i
 
-.PHONY : mainPMD.i
+.PHONY : src/Util.i
 
 # target to preprocess a source file
-mainPMD.cpp.i:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/mainPMD.cpp.i
-.PHONY : mainPMD.cpp.i
+src/Util.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Util.cpp.i
+.PHONY : src/Util.cpp.i
 
-mainPMD.s: mainPMD.cpp.s
+src/Util.s: src/Util.cpp.s
 
-.PHONY : mainPMD.s
+.PHONY : src/Util.s
 
 # target to generate assembly for a file
-mainPMD.cpp.s:
-	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/mainPMD.cpp.s
-.PHONY : mainPMD.cpp.s
+src/Util.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/Util.cpp.s
+.PHONY : src/Util.cpp.s
+
+src/mainPMD.o: src/mainPMD.cpp.o
+
+.PHONY : src/mainPMD.o
+
+# target to build an object file
+src/mainPMD.cpp.o:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/mainPMD.cpp.o
+.PHONY : src/mainPMD.cpp.o
+
+src/mainPMD.i: src/mainPMD.cpp.i
+
+.PHONY : src/mainPMD.i
+
+# target to preprocess a source file
+src/mainPMD.cpp.i:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/mainPMD.cpp.i
+.PHONY : src/mainPMD.cpp.i
+
+src/mainPMD.s: src/mainPMD.cpp.s
+
+.PHONY : src/mainPMD.s
+
+# target to generate assembly for a file
+src/mainPMD.cpp.s:
+	$(MAKE) -f CMakeFiles/PMDDetector.dir/build.make CMakeFiles/PMDDetector.dir/src/mainPMD.cpp.s
+.PHONY : src/mainPMD.cpp.s
 
 # Help Target
 help:
@@ -294,24 +294,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... PMDDetector"
 	@echo "... rebuild_cache"
-	@echo "... Detector.o"
-	@echo "... Detector.i"
-	@echo "... Detector.s"
-	@echo "... FrameObject.o"
-	@echo "... FrameObject.i"
-	@echo "... FrameObject.s"
-	@echo "... FramePlane.o"
-	@echo "... FramePlane.i"
-	@echo "... FramePlane.s"
-	@echo "... PlaneDetector.o"
-	@echo "... PlaneDetector.i"
-	@echo "... PlaneDetector.s"
-	@echo "... Util.o"
-	@echo "... Util.i"
-	@echo "... Util.s"
-	@echo "... mainPMD.o"
-	@echo "... mainPMD.i"
-	@echo "... mainPMD.s"
+	@echo "... src/Detector.o"
+	@echo "... src/Detector.i"
+	@echo "... src/Detector.s"
+	@echo "... src/FrameObject.o"
+	@echo "... src/FrameObject.i"
+	@echo "... src/FrameObject.s"
+	@echo "... src/FramePlane.o"
+	@echo "... src/FramePlane.i"
+	@echo "... src/FramePlane.s"
+	@echo "... src/PlaneDetector.o"
+	@echo "... src/PlaneDetector.i"
+	@echo "... src/PlaneDetector.s"
+	@echo "... src/Util.o"
+	@echo "... src/Util.i"
+	@echo "... src/Util.s"
+	@echo "... src/mainPMD.o"
+	@echo "... src/mainPMD.i"
+	@echo "... src/mainPMD.s"
 .PHONY : help
 
 
