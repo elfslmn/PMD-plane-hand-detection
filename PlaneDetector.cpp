@@ -171,14 +171,14 @@ namespace ark {
                     // find surface area
                     util::radixSortPoints(allIndices, C, R, numPts, &allXyzPoints);
                     double surfArea = util::surfaceArea(normal_map.size(), allIndices,allXyzPoints, numPts);
-                   std::cout<<"r="<<r<<" c="<<c<<" surfArea="<<surfArea<<" numPts="<<numPts<<std::endl; //debug
+                   //std::cout<<"r="<<r<<" c="<<c<<" surfArea="<<surfArea<<" numPts="<<numPts<<std::endl; //debug
                     if (surfArea < params->subplaneMinArea) {
                         continue;
                     }
 
                     // find plane equation
                     Vec3f eqn = util::linearRegression(allXyzPoints, numPts);
-                    std::cout<<"r="<<r<<" c="<<c<<" eqn="<<eqn<<std::endl; //debug
+                    //std::cout<<"r="<<r<<" c="<<c<<" eqn="<<eqn<<std::endl; //debug
 
                     // combine similar subplanes
                     uint i;
@@ -224,7 +224,7 @@ namespace ark {
         // 3. find equations of the combined planes and construct Plane objects with the data
         for (unsigned i = 0; i < planeEquation.size(); ++i) {
             int SZ = (int)planePointsIJ[i]->size();
-            std::cout<<"plane "<<i<<" planePointsIJ="<<SZ<<std::endl;
+            //std::cout<<"plane "<<i<<" planePointsIJ="<<SZ<<std::endl;
             if (SZ < PLANE_MIN_POINTS) continue;
 
             std::vector<Vec3f> pointsXYZ;
@@ -240,7 +240,7 @@ namespace ark {
                     ++goodPts;
                 }
             }
-            std::cout<<"plane "<<i<<" goodPts="<<goodPts<<std::endl;
+            //std::cout<<"plane "<<i<<" goodPts="<<goodPts<<std::endl;
             if (goodPts < PLANE_MIN_INLIERS) continue;
 
             // push to output

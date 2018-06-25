@@ -276,7 +276,7 @@ namespace ark {
          * distance at which surface vectors are sampled to compute the normal
          * default: 4
          */
-        int normalCalculationDistance = 8; 
+        int normalCalculationDistance = 8;
 
         /**
          * maximum difference between the surface normal vectors of two adjacent points
